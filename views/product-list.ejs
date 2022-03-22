@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>
+            Apple Products
+        </title>
+    </head>
+    <body>
+        <div class="product-table">
+            <table border="1">
+                <tr>
+                    <th>S.NO</th>
+                    <th>PRODUCT_ID</th>
+                    <th>PRODUCT_NAME</th>
+                    <th>CATEGORY</th>
+                    <th>STORAGE</th>
+                    <th>PRICE_FROM</th>
+                    <th>COLORS</th>
+                    <th>PRODUCT_SPEC</th>
+                </tr>
+                <% 
+                    if(userData.length != 0){
+                        var i=1;
+                        userData.forEach(resultSet => { %>
+                            <tr>
+                                <td><%=i; %></td>
+                                <td><%=resultSet.PRODUCT_ID %></td>
+                                <td><%=resultSet.PRODUCT_NAME %></td>
+                                <td><%=resultSet.CATEGORY %></td>
+                                <td><%=resultSet.STORAGE %></td>
+                                <td><%=resultSet.PRICE_FROM %></td>
+                                <td><%=resultSet.COLORS %></td>
+                                <td><%=resultSet.PRODUCT_SPEC %></td>
+                            </tr>
+                       <% i++; }); %>
+                    <% } else { %>
+                        <tr>
+                            <td colspan="8">No data available</td>
+                        </tr>
+                    <% } %>
+            </table>
+        </div>
+    </body>
+
+</html>
